@@ -3,23 +3,18 @@ import React from 'react';
 import '../styles/square.css';
 
 class Square extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            value: null,
-        };
-    }
-
 
     render() {
         return (
-            <button className="square" onClick={this.sendAlert}>
-                {this.state.value}
+            <button
+                className="square"
+                onClick={this.click}>
+                {this.props.value}
             </button>
         );
     }
 
-    sendAlert = () => this.setState({value: 'X'});
+    click = () => this.props.onClick();
 };
 
 export default Square;
